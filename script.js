@@ -36,7 +36,6 @@ function ChangePhoto(photoNumber) {
      $("#Photo").attr("src", ImagesData[photoNumber].Photo);
      $("#PhotoTitle").text(ImagesData[photoNumber].Title);
      $("#PhotoDescription").text(ImagesData[photoNumber].Description);
-     console.log(ImagesData[photoNumber]);
 }
 
 $( "#LeftPanel" ).click(function() {

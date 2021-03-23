@@ -18,7 +18,7 @@ body {
 
 #MainBox {
     width: 60%;
-    height: 350px;
+    height: 550px;
     box-shadow: 5px 2px 12px #888888;
     background-color: white;
     display: flex;
@@ -42,7 +42,6 @@ body {
     width: 32px;
     display: flex;
     align-items: center;
-    border: 1px solid black;
 }
 
 .BigPicture {
@@ -55,6 +54,7 @@ body {
     margin: 0 0;
     border: 0 0;
     width: 100%;
+    display: inline-block;
     height: 100%;
     object-fit: contain;
     top: 0px;

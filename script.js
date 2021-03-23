@@ -1,5 +1,5 @@
 let CurrentPhotoID = 0;
-const MaxPhotoID = 1;
+const MaxPhotoID = 4;
 let Data0 = {
         Photo: "images/Ferrari.jpg",
         Title: "Ferrari",
@@ -36,7 +36,21 @@ function ChangePhoto(photoNumber) {
      $("#Photo").attr("src", ImagesData[photoNumber].Photo);
      $("#PhotoTitle").text(ImagesData[photoNumber].Title);
      $("#PhotoDescription").text(ImagesData[photoNumber].Description);
-     console.log(Data.length);
+     console.log(ImagesData[photoNumber]);
 }
+
+$( "#LeftPanel" ).click(function() {
+    if (CurrentPhotoID > 0) {
+        CurrentPhotoID--;
+    }
+    ChangePhoto(CurrentPhotoID);
+  });
+
+$( "#RightPanel" ).click(function() {
+  if (CurrentPhotoID < MaxPhotoID) {
+      CurrentPhotoID++;
+  }
+  ChangePhoto(CurrentPhotoID);
+});
 
 ChangePhoto(CurrentPhotoID); /* Először az első (Nulladik) elem kiválasztva */

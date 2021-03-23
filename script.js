@@ -13,21 +13,21 @@ let Data1 = {
 }
 
 let Data2 = {
-    Photo: "images/Moon.jpg",
-    Title: "The Moon",
-    Description: "Our loyal follower"
+    Photo: "images/cat.png",
+    Title: "Cat",
+    Description: "She has 9 lives!"
 }
 
 let Data3 = {
-    Photo: "images/Moon.jpg",
-    Title: "The Moon",
-    Description: "Our loyal follower"
+    Photo: "images/Eger.jpg",
+    Title: "Eger",
+    Description: "My Hometown!"
 }
 
 let Data4 = {
-    Photo: "images/Moon.jpg",
-    Title: "The Moon",
-    Description: "Our loyal follower"
+    Photo: "images/Palinka.jpg",
+    Title: "Pálinka",
+    Description: "Covid Vaccine"
 }
 
 let ImagesData = [Data0, Data1, Data2, Data3, Data4];

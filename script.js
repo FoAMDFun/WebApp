@@ -32,6 +32,10 @@ let Data4 = {
 
 let ImagesData = [Data0, Data1, Data2, Data3, Data4];
 
+$(window).bind('orientationchange', function (event) {
+    location.reload(true);
+});
+
 function ChangePhoto(photoNumber) {
      $("#Photo").attr("src", ImagesData[photoNumber].Photo);
      $("#PhotoTitle").text(ImagesData[photoNumber].Title);

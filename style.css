@@ -1,0 +1,74 @@
+body {
+    background: linear-gradient(to right, rgb(173, 173, 173), white, rgb(173, 173, 173)); 
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+    overflow-y: hidden;
+}
+
+#MainContent {
+    display: flex;
+    min-height: inherit;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+}
+
+#MainBox {
+    width: 60%;
+    height: 350px;
+    box-shadow: 5px 2px 12px #888888;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    /* position: relative; */
+}
+
+.Arrow {
+    display: inline-block;
+    margin-left: 5px;
+    height: 24px;
+}
+
+#RightArrow {
+    transform: rotate(180deg);
+}
+
+.Panel {
+    display: inline-block;
+    height: 100%;
+    width: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.BigPicture {
+    display: inline-block;
+    width: 95%;
+    height: 100%;
+}
+
+#Photo {
+    margin: 0 0;
+    border: 0 0;
+    border: 1px solid black;
+    position: absolute;
+    left: 0px;
+    width: inherit;
+    heigh: inherit;
+    top: 0px;
+    z-index: -1;
+}
+
+#PhotoTitle {
+
+}
+
+#BottomArea {
+    display: flex;
+    border: 1px solid black;
+    height: 64px;
+    width: 100%;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div id="MainContent">
+    <div id="MainBox"> <!-- A nagy fehér doboz, a fő content -->
+      <div class="Panel" id="LeftPanel">
+        <div class="Arrow" id="LeftArrow"><img src="images/arrow.svg" alt=""></div>
+      </div>
+
+      <div class="BigPicture">
+        <img id="Photo">
+        <div class="GrayContainer">
+          <h1 id="PhotoTitle">Címe</h1>
+          <p id="PhotoDescription">Leírása</p>
+        </div>
+        </div> <!-- Ez a nagy kép a képernyő közepén -->
+        <div class="Panel" id="RightPanel">
+          <div class="Arrow" id="RightArrow"><img src="images/arrow.svg" alt=""></div> <!-- Jobbra lapozó nyíl -->
+        </div>
+      </div>
+    <!-- Ez a felső nagy képnézegető vége -->
+    <div id="BottomArea">
+      <div class="Thumbnail"></div>
+      </div>
+    </div>
+    <!-- Ez a MainBox vége -->
+  </div>
+  <!-- Ez a MainContent vége -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

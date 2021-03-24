@@ -1,10 +1,10 @@
 let CurrentPhotoID = 0;
 const MaxPhotoID = 4;
 let Data0 = {
-        Photo: "images/Ferrari.jpg",
-        Title: "Ferrari",
-        Description: "A high end sportcar from Italy"
-    }
+    Photo: "images/Ferrari.jpg",
+    Title: "Ferrari",
+    Description: "A high end sportcar from Italy"
+}
 
 let Data1 = {
     Photo: "images/Moon.jpg",
@@ -33,7 +33,10 @@ let Data4 = {
 let ImagesData = [Data0, Data1, Data2, Data3, Data4];
 
 $(window).bind('orientationchange', function (event) {
+    var SaveID = CurrentPhotoID;
     location.reload(true);
+    CurrentPhotoID = SaveID;
+    ChangePhoto(CurrentPhotoID);
 });
 
 function ChangePhoto(photoNumber) {

@@ -68,12 +68,22 @@ body {
 #BottomArea {
     display: flex;
     border: 1px solid black;
-    height: 96px;
+    height: 108px;
     width: 60%;
+    justify-content: space-around;
 }
 
 .thumbnail {
     border: 1px solid black;
-    width: 32px;
-    height: 32px;
+    width: 96px;
+    height: 96px;
+    display: inline-block;
+}
+
+.ThumbnailPhoto {
+    width: 96px;
+    height: 96px;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid red;
 }

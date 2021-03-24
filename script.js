@@ -40,7 +40,7 @@ function InitThumbnails() {
     Dummy = 0;
     ImagesData.forEach(Item => {
         $("#BottomArea").append(`<div class="Thumbnail">
-        <img class="ThumbnailPhoto" id="` + Dummy.toString() + `" src="` + Item.Photo + `">
+        <img class="ThumbnailPhoto" data-number="` + Dummy.toString() + `" src="` + Item.Photo + `">
         <div class="HiddenTitle">${Item.Title}</div></div>`);
         Dummy++;
     })
@@ -65,9 +65,13 @@ $( "#RightPanel" ).click(function() {
   ChangePhoto();
 });
 
-$(".Thumbnail").click(function(Event) {
-    Event.preventDefault();
-    console.log(this.id);
+$("#BottomArea").click(function(Event) {
+    let IndexClicked = $(Event.target).attr('data-number');
+    let numberIndex = parseInt(indexClicked);
+    
+    console.log(numberIndex);
+
+    CurrentPhotoID = numberIndex;
     ChangePhoto();
 })
 

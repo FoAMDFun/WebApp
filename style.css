@@ -25,28 +25,33 @@ body {
 }
 
 .GrayContainer {
-    display: inline;
-    width: 95%;
+    display: inline-block;
+    width: 100%;
     height: 100px;
     background-color: black;
     position: absolute;
     bottom: 0;
-    left: 2.5%;
+    left: 0;
     opacity: 0.5;
 }
 
-#PhotoTitle #PhotoDescription {
-    z-index: 1;
-    color: red;
+#PhotoDescription, #PhotoTitle {
+    display: block;
+    color: white;
     opacity: 1;
     margin: 5px;
     display: block;
+    padding-left: 28px;
 }
 
 #PhotoTitle {
+    font-family: 'Train One', cursive;
+    font-size: 52px;
 }
 
 #PhotoDescription {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
 }
 
 .Arrow {
@@ -82,7 +87,6 @@ body {
 
 #PhotoTitle {
     font-size: 36px;
-
 }
 
 #BottomArea {
@@ -117,7 +121,7 @@ body {
     border-radius: 5px;
     padding: 5px;
     margin-top: 6px;
-    display: block;    
+    display: none;    
 }
 
 .Thumbnail:hover .HiddenTitle {

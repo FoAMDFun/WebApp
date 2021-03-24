@@ -68,6 +68,12 @@ body {
 #BottomArea {
     display: flex;
     border: 1px solid black;
-    height: 64px;
+    height: 96px;
     width: 60%;
+}
+
+.thumbnail {
+    border: 1px solid black;
+    width: 32px;
+    height: 32px;
 }

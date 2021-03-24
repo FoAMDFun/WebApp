@@ -1,5 +1,4 @@
 let CurrentPhotoID = 0;
-const MaxPhotoID = 4;
 
 let ImagesData = [{
     Photo: "images/Ferrari.jpg",
@@ -27,6 +26,8 @@ let ImagesData = [{
     Description: "Covid Vaccine"
 }]
 
+const MaxPhotoID = ImagesData.length - 1;
+
 $(window).bind('orientationchange', function (event) {
     var SaveID = CurrentPhotoID;
     location.reload(true);
@@ -34,6 +35,14 @@ $(window).bind('orientationchange', function (event) {
     ChangePhoto(CurrentPhotoID);
 });
 
+function InitThumbnails() {
+    ImagesData.forEach(Item => {
+        $("#BottomArea").append(`<div class="Thumbnail">` +
+        `<img class="ThumbnailPhoto" src="` + Item.Photo + `">` +
+      `</div>`);
+    });
+    
+}
 function ChangePhoto() {
      $("#Photo").attr("src", ImagesData[CurrentPhotoID].Photo);
      $("#PhotoTitle").text(ImagesData[CurrentPhotoID].Title);
@@ -54,4 +63,5 @@ $( "#RightPanel" ).click(function() {
   ChangePhoto();
 });
 
+InitThumbnails();
 ChangePhoto(); /* Először az első (Nulladik) elem kiválasztva */

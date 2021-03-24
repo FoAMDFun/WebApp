@@ -40,7 +40,7 @@ function InitThumbnails() {
     Dummy = 0;
     ImagesData.forEach(Item => {
         $("#BottomArea").append(`<div class="Thumbnail">
-        <img class="ThumbnailPhoto" id="ThumbnailPhoto` + Dummy.toString() + `" src="` + Item.Photo + `">
+        <img class="ThumbnailPhoto" id="` + Dummy.toString() + `" src="` + Item.Photo + `">
         <div class="HiddenTitle">${Item.Title}</div></div>`);
         Dummy++;
     })
@@ -65,12 +65,11 @@ $( "#RightPanel" ).click(function() {
   ChangePhoto();
 });
 
-$(".Thumbnail").click(function() {
-    if (CurrentPhotoID < MaxPhotoID) {
-        CurrentPhotoID++;
-    }
+$(".Thumbnail").click(function(Event) {
+    Event.preventDefault();
+    console.log(this.id);
     ChangePhoto();
-  });
+})
 
 InitThumbnails();
 ChangePhoto(); /* Először az első (Nulladik) elem kiválasztva */

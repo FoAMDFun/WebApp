@@ -87,7 +87,6 @@ body {
 
 #BottomArea {
     display: flex;
-    border: 1px solid black;
     height: 128px;
     width: 60%;
     justify-content: space-around;
@@ -96,17 +95,17 @@ body {
 }
 
 .Thumbnail {
-    width: 104px;
-    height: 104px;
+    width: 128px;
+    height: 128px;
     display: inline-block;
+    text-align: center;
 }
 
 .ThumbnailPhoto {
-    width: 96px;
-    height: 96px;
+    width: 85%;
+    height: 85%;
     padding: 5px;
     background-color: white;
-    border: 1px solid red;
 }
 
 .HiddenTitle {
@@ -118,7 +117,7 @@ body {
     border-radius: 5px;
     padding: 5px;
     margin-top: 6px;
-    display: none;    
+    display: block;    
 }
 
 .Thumbnail:hover .HiddenTitle {

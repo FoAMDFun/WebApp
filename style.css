@@ -1,9 +1,8 @@
 body {
-    background: linear-gradient(to right, rgb(173, 173, 173), white, rgb(173, 173, 173)); 
+    background: linear-gradient(to right, rgb(32, 32, 32),white, white, rgb(32, 32, 32));  
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    
+    min-height: 100vh;    
     overflow-y: hidden;
 }
 
@@ -19,11 +18,35 @@ body {
 #MainBox {
     width: 60%;
     height: 550px;
-    box-shadow: 5px 2px 12px #888888;
+    box-shadow: 12px 12px 24px rgb(32, 32, 32);
     background-color: white;
     display: flex;
-    justify-content: center;
-    /* position: relative; */
+    position: relative;
+}
+
+.GrayContainer {
+    display: inline;
+    width: 95%;
+    height: 100px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 2.5%;
+    opacity: 0.5;
+}
+
+#PhotoTitle #PhotoDescription {
+    z-index: 1;
+    color: red;
+    opacity: 1;
+    margin: 5px;
+    display: block;
+}
+
+#PhotoTitle {
+}
+
+#PhotoDescription {
 }
 
 .Arrow {
@@ -39,7 +62,7 @@ body {
 .Panel {
     display: inline-block;
     height: 100%;
-    width: 32px;
+    width: 2.5%;
     display: flex;
     align-items: center;
 }
@@ -51,32 +74,30 @@ body {
 }
 
 #Photo {
-    margin: 0 0;
-    border: 0 0;
     width: 100%;
-    display: inline-block;
     height: 100%;
     object-fit: contain;
-    top: 0px;
-    z-index: -1;
+    z-index: -1; /* Behind everything, so the Title and Description will be shown on the picture */
 }
 
 #PhotoTitle {
+    font-size: 36px;
 
 }
 
 #BottomArea {
     display: flex;
     border: 1px solid black;
-    height: 108px;
+    height: 128px;
     width: 60%;
     justify-content: space-around;
+    align-content: center;
+    align-items: center;
 }
 
-.thumbnail {
-    border: 1px solid black;
-    width: 96px;
-    height: 96px;
+.Thumbnail {
+    width: 104px;
+    height: 104px;
     display: inline-block;
 }
 
@@ -86,4 +107,24 @@ body {
     padding: 5px;
     background-color: white;
     border: 1px solid red;
+}
+
+.HiddenTitle {
+    font-size: 18px;
+    text-align: center;
+    color: white;
+    font-family: 'Spectral SC', serif;
+    background: gray;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 6px;
+    display: none;    
+}
+
+.Thumbnail:hover .HiddenTitle {
+    display: block;
+}
+
+.Thumbnail:hover .ThumbnailPhoto {
+    box-shadow: 12px 12px 24px rgb(32, 32, 32);
 }

@@ -1,4 +1,5 @@
 let CurrentPhotoID = 0;
+let Dummy = 0;
 
 let ImagesData = [{
     Photo: "images/Ferrari.jpg",
@@ -36,12 +37,13 @@ $(window).bind('orientationchange', function (event) {
 });
 
 function InitThumbnails() {
+    Dummy = 0;
     ImagesData.forEach(Item => {
-        $("#BottomArea").append(`<div class="Thumbnail">` +
-        `<img class="ThumbnailPhoto" src="` + Item.Photo + `">` +
-      `</div>`);
-    });
-    
+        $("#BottomArea").append(`<div class="Thumbnail">
+        <img class="ThumbnailPhoto" id="ThumbnailPhoto` + Dummy.toString() + `" src="` + Item.Photo + `">
+        <div class="HiddenTitle">${Item.Title}</div></div>`);
+        Dummy++;
+    })
 }
 function ChangePhoto() {
      $("#Photo").attr("src", ImagesData[CurrentPhotoID].Photo);
@@ -62,6 +64,13 @@ $( "#RightPanel" ).click(function() {
   }
   ChangePhoto();
 });
+
+$(".Thumbnail").click(function() {
+    if (CurrentPhotoID < MaxPhotoID) {
+        CurrentPhotoID++;
+    }
+    ChangePhoto();
+  });
 
 InitThumbnails();
 ChangePhoto(); /* Először az első (Nulladik) elem kiválasztva */

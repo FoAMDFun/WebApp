@@ -78,13 +78,23 @@ body {
     height: 100%;
 }
 
-#Photo {
+.BigPicture img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    display: inline-block;
+}
+
+#Photo {
     z-index: -1; /* Behind everything, so the Title and Description will be shown on the picture */
 }
 
+#TransitionPhoto {
+    position: absolute;
+    width: 95%;
+    left: 2.5%;
+    z-index: -1; /* Behind everything, so the Title and Description will be shown on the picture */
+}
 #PhotoTitle {
     font-size: 36px;
 }
@@ -103,12 +113,13 @@ body {
     height: 128px;
     display: inline-block;
     text-align: center;
+    cursor: pointer;
 }
 
 .ThumbnailPhoto {
     width: 85%;
     height: 85%;
-    padding: 5px;
+    padding: 6px;
     background-color: white;
 }
 
@@ -130,4 +141,31 @@ body {
 
 .Thumbnail:hover .ThumbnailPhoto {
     box-shadow: 12px 12px 24px rgb(32, 32, 32);
+}
+
+/* Animations (for the fancy looks! :) ) */
+
+body {
+    opacity: 0;
+    animation-name: Drop;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+/* The background animation when the page loads */
+@keyframes Drop {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+/* Transitions when the pictures fade in and out */
+@keyframes FadeInPicture {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+/* Transitions when the pictures fade in and out */
+@keyframes FadeOutPicture {
+    0% {opacity: 1}
+    100% {opacity: 0}
 }

@@ -84,6 +84,12 @@ function ChangePhoto() {
     $("#TransitionPhoto").css("animation-iteration-count", "1");
 
     // After the animation finishes an event handler will swap the pictures
+
+    //Enable the actual picture down
+
+    $("#BottomArea img").css("opacity", ".5");
+    $(`#BottomArea img:nth-of-type(${CurrentPhotoID})`).css("opacity", "1");
+
     DisableArrows();
 }
 
@@ -116,6 +122,7 @@ function InitThumbnails() {
         <img class="ThumbnailPhoto" data-number="` + Dummy.toString() + `" src="${Item.Photo}">
         <div class="HiddenTitle">${Item.Title}</div></div>`);
         Dummy++;
+        $("#BottomArea img").css("opacity", ".5");
     })
 }
 

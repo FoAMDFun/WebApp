@@ -62,8 +62,12 @@ function InitImage() {
     $("#TransitionPhoto").css("opacity", "0");
 }
 
+function RedrawThumbnails() {
+    $("#BottomArea img").css("opacity", ".5");
+    $(`#ThumbnailPhoto` + CurrentPhotoID .toString()).css("opacity", "1");
+}
 function ChangePhoto() {
-    // Load picure to Transition first and change the texts down immediately
+    // Load picture to Transition first and change the texts down immediately
 
     $("#TransitionPhoto").attr("src", ImagesData[CurrentPhotoID].Photo);
     $("#PhotoTitle").text(ImagesData[CurrentPhotoID].Title);
@@ -85,10 +89,9 @@ function ChangePhoto() {
 
     // After the animation finishes an event handler will swap the pictures
 
-    //Enable the actual picture down
+    //Enable the actual picture down and disable the rest
 
-    $("#BottomArea img").css("opacity", ".5");
-    $(`#BottomArea img:nth-of-type(${CurrentPhotoID})`).css("opacity", "1");
+    RedrawThumbnails();
 
     DisableArrows();
 }
@@ -119,7 +122,7 @@ function InitThumbnails() {
     var Dummy = 0;
     ImagesData.forEach(Item => {
         $("#BottomArea").append(`<div class="Thumbnail" data-number=` + Dummy.toString() + `>
-        <img class="ThumbnailPhoto" data-number="` + Dummy.toString() + `" src="${Item.Photo}">
+        <img class="ThumbnailPhoto" id="ThumbnailPhoto` + Dummy.toString() + `"data-number="` + Dummy.toString() + `" src="${Item.Photo}">
         <div class="HiddenTitle">${Item.Title}</div></div>`);
         Dummy++;
         $("#BottomArea img").css("opacity", ".5");
@@ -153,3 +156,4 @@ $("body").on("click", ".ThumbnailPhoto", function(Event) {
 InitThumbnails();
 InitImage();
 DisableArrows();
+RedrawThumbnails();

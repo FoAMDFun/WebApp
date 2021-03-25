@@ -48,9 +48,7 @@ function SwapPictures() {
 
     $("#Photo").attr("src", ImageName);
     $("#Photo").css("opacity", "1");
-    $("#Photo").css("z-index", "-1");
     $("#TransitionPhoto").css("opacity", "0");
-    $("#TransitionPhoto").css("z-index", "-1");
 
     // We need to reset the animation in order to retrigger it later
     ResetAnimations();
@@ -62,8 +60,6 @@ function InitImage() {
     $("#PhotoDescription").text(ImagesData[CurrentPhotoID].Description);
     $("#Photo").css("opacity", "1");
     $("#TransitionPhoto").css("opacity", "0");
-    $("#Photo").css("z-index", "-1");
-    $("#TransitionPhoto").css("z-index", "-1");
 }
 
 function ChangePhoto() {
@@ -79,7 +75,6 @@ function ChangePhoto() {
     $("#Photo").css("animation-duration", "1s");
     $("#Photo").css("animation-fill-mode", "forwards");
     $("#Photo").css("animation-iteration-count", "1");
-    $("#Photo").css("z-index", "-1");
  
     // Animate #TransitionPhoto to show it
 
@@ -87,16 +82,24 @@ function ChangePhoto() {
     $("#TransitionPhoto").css("animation-duration", "1s");
     $("#TransitionPhoto").css("animation-fill-mode", "forwards");
     $("#TransitionPhoto").css("animation-iteration-count", "1");
-    $("#TransitionPhoto").css("z-index", "-1");
 
     // After the animation finishes an event handler will swap the pictures
+    DisableArrows();
 }
 
 function DisableArrows() {
-    if (CurrentPhotoID = 0) {
-        $("#LeftArrow").css("opacity", "0.1");
+    if (CurrentPhotoID === 0) {
+        $("#LeftPanel").css("opacity", ".5");
+    } else {
+        $("#LeftPanel").css("opacity", "1");
     }
-    
+
+    if (CurrentPhotoID === MaxPhotoID) {
+        $("#RightPanel").css("opacity", ".5");
+    } else {
+        $("#RightPanel").css("opacity", "1");
+    }
+
 }
 
 $(window).bind('orientationchange', function (event) {
@@ -142,3 +145,4 @@ $("body").on("click", ".ThumbnailPhoto", function(Event) {
 
 InitThumbnails();
 InitImage();
+DisableArrows();

@@ -86,14 +86,12 @@ body {
 }
 
 #Photo {
-    z-index: -1; /* Behind everything, so the Title and Description will be shown on the picture */
 }
 
 #TransitionPhoto {
     position: absolute;
     width: 95%;
     left: 2.5%;
-    z-index: -1; /* Behind everything, so the Title and Description will be shown on the picture */
 }
 #PhotoTitle {
     font-size: 36px;

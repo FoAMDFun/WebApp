@@ -24,7 +24,7 @@ let ImagesData = [{
 {
     Photo: "images/Palinka.jpg",
     Title: "Pálinka",
-    Description: "Covid Vaccine"
+    Description: "Vaccine for COVID"
 }]
 
 const MaxPhotoID = ImagesData.length - 1;
@@ -39,8 +39,8 @@ $(window).bind('orientationchange', function (event) {
 function InitThumbnails() {
     Dummy = 0;
     ImagesData.forEach(Item => {
-        $("#BottomArea").append(`<div class="Thumbnail">
-        <img class="ThumbnailPhoto" data-number="` + Dummy.toString() + `" src="` + Item.Photo + `">
+        $("#BottomArea").append(`<div class="Thumbnail" data-number=` + Dummy.toString() + `>
+        <img class="ThumbnailPhoto" data-number="` + Dummy.toString() + `" src="${Item.Photo}">
         <div class="HiddenTitle">${Item.Title}</div></div>`);
         Dummy++;
     })
@@ -58,19 +58,16 @@ $( "#LeftPanel" ).click(function() {
     ChangePhoto();
   });
 
-$( "#RightPanel" ).click(function() {
+$("#RightPanel").click(function() {
   if (CurrentPhotoID < MaxPhotoID) {
       CurrentPhotoID++;
   }
   ChangePhoto();
 });
 
-$("#BottomArea").click(function(Event) {
+$("body").on("click", ".ThumbnailPhoto", function(Event) {
     let IndexClicked = $(Event.target).attr('data-number');
-    let numberIndex = parseInt(indexClicked);
-    
-    console.log(numberIndex);
-
+    let numberIndex = parseInt(IndexClicked);
     CurrentPhotoID = numberIndex;
     ChangePhoto();
 })
